@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        h2 {
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            background-color: #4169E1;
+        }
+
+        label {
+            font-weight: bolder;
+            font-size: large;
+        }
+
+        button {
+            border-radius: 40px;
+            margin-top: 10px;
+            margin-left: 210px;
+        }
+
+        textarea {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body ng-app="b3" novalidate ng-controller="ctrl1">
+    
+    <div class="container">
+
+        <form name="frm" ng-submit="xuly();" class="col-6 mx-auto border border-primary, rounded-3">
+            <h2>Đăng ký Dành Cho Khách Hàng</h2>
+
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input name="tensv" ng-model="tensv" required minlength="2" maxlength="40" type="text"
+                    class="form-control bg-info text-white">
+                <em ng-if="frm.tensv.$invalid" class="text-danger h6">Nhập họ và tên không được bỏ trống</em>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input name="email" ng-model="email" required minlength="8" maxlength="45" type="text"
+                    class="form-control bg-info text-white">
+                <em ng-if="frm.email.$invalid" class="text-danger h6">Không được bỏ trống email</em>
+            </div>
+            <div class="form-group">
+                <label>Giới tính</label>
+                <fieldset class="border border-secondary p-3">
+                    <input name="gioitinh" ng-model="gioitinh" type="radio" value="1"> Nam &nbsp;
+                    <input name="gioitinh" ng-model="gioitinh" type="radio" value="2"> Nữ
+                </fieldset>
+                <em ng-if="!gioitinh" class="text-danger h6">Hãy chọn một giới tính tùy vào tính cách của
+                    bạn</em>
+
+            </div>
+            <div class="form-group">
+                <label>Sở thích</label>
+                <fieldset class="border border-secondary p-3">
+                    <input value="docsach" type="checkbox" ng-model="docsach"> Đọc sách &nbsp;
+                    <input value="dulich" type="checkbox" ng-model="dulich"> Du Lịch &nbsp;
+                    <input value="amthuc" type="checkbox" ng-model="amthuc"> Ẩm thực &nbsp;
+                    <input value="amnhac" type="checkbox" ng-model="amnhac"> Âm nhạc&nbsp;
+                    <input value="khac" type="checkbox" ng-model="khac"> Khác &nbsp;
+                </fieldset>
+                <em ng-if="!docsach && !dulich && !amthuc && !amnhac && !khac" class="text-danger h6">Hãy chọn ít
+                    nhất 1 sở thích nếu không có thì chọn khác</em>
+            </div>
+
+            <div class="form-group">
+                <label>Quốc tịch</label>
+                <select name="nsx" ng-model="nsx" class="form-control bg-warning text-white">
+                    <option value="0" selected disabled>Chọn quốc tịch</option>
+                    <option value="1">Việt Nam</option>
+                    <option value="2">USA</option>
+                    <option value="3">Nga</option>
+                    <option value="4">Pháp</option>
+                    <option value="5">Đức</option>
+                    <option value="6">Úc</option>
+                </select>
+                <em ng-if="!nsx" class="text-danger h6">Hãy chọn 1 quốc tịch mà bạn có</em>
+            </div>
+
+            <label>Ghi chú</label> <br>
+            <textarea style="float: left;" name="" id="" cols="64" rows="4"></textarea>
+            <div class="from-group">
+                <button type="submit" ng-disabled="frm.$invalid" novalidate style="margin-bottom: 10px;"
+                    class="btn btn-info">Đăng ký</button>
+            </div>
+            <u style="margin-left: 180px; color: lightskyblue;"><a href="index.html">Quay về trang chủ?</a></u>
+        </form>
+    </div>
+
+</body>
+<script>
+    app = angular.module("b3", []);
+    app.controller("ctrl1", function ($scope) {
+        $scope.xuly = function () {
+
+            if ($scope.frm.$valid) {
+                alert('Đăng ký Thành công');
+            }
+        };
+    });
+</script>
+
+</html>

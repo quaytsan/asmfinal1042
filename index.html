@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="https://kit.fontawesome.com/7f5d6ce534.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body style="background-image: url(./images/back.jpg); background-size: cover;">
+
+    <div class="giohang">
+        <a onclick="showcart();"><img src="images/cart.png"><span id="countsp">0</span></a>
+    </div>
+    <div id="showcart">
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Hình</th>
+                <th>Tên sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền ($)</th>
+            </tr>
+            <tbody id="mycart">
+
+            </tbody>
+
+        </table>
+        <button> <a class="ttoa" href="./cart.html">Thanh toán</a></button>
+        <button onclick="xoaall()">Xóa tất cả</button>
+    </div>
+    <div class="boxcenter">
+        <div class="row mb header" style="position: relative;">
+            <img style="position: absolute;" height="70px" width="100px" src="./images/back.jfif">
+            <h1> SIÊU THỊ TRỰC TUYẾN TRÁI CÂY SIÊU SẠCH</h1>
+        </div>
+
+        <div class="row mb menu"
+            style="background-image: linear-gradient(rgba(16, 238, 68, 0.879) ,rgba(28, 229, 62, 0.879) )">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="giohang.html">Giỏ hàng</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Góp ý</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+                <li><a href="login.html">Đăng ký</a></li>
+            </ul>
+        </div>
+        <div class="row mb ">
+            <div class="row">
+                <div class="banner mb">
+                    <div class="slideshow-container">
+                       
+                        <div class="slideshow-container">
+
+                            
+                            <div id="anh" class="mySlides fade">
+                                <img src="./images/banner3.jpg ">
+                            </div>
+
+                            <div class="mySlides fade">
+                                <img src="./images/banner2.jpg">
+
+                            </div>
+
+                            <div class="mySlides fade">
+                                <img src="./images/banner.jpg">
+                            </div>
+
+                           
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+
+                       
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- <i class="fa-solid fa-circle-chevron-left left"></i>
+                    <i class="fa-solid fa-circle-chevron-right right"></i> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/1.jpg" alt=""></div>
+                    <p><span>120000</span>đ&nbsp;/kg</p>
+                    <a href="#">Bơ</a>
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/2.jpg" alt=""></div>
+                    <p><span>15000</span>đ&nbsp;/nải</p>
+                    <a href="#">Chuối</a>
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="images/3.jpg" alt=""></div>
+                    <p><span>39000</span>đ&nbsp;/kg</p>
+                    <a href="#">Táo</a>
+                   
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/4.jpg" alt=""></div>
+                    <p><span>23000</span>đ&nbsp;/kg</p>
+                    <a href="#">Đu Đủ</a>
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/5.jpg" alt=""></div>
+                    <p><span>128000</span>đ&nbsp;/kg</p>
+                    <a href="#">Thanh Long</a>
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="images/6.jpg" alt=""></div>
+                    <p><span>73000</span>đ&nbsp;/kg</p>
+                    <a href="#">Lê Thái</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/7.jpg" alt=""></div>
+                    <p><span>40000</span>đ&nbsp;/kg</p>
+                    <a href="#">Dưa Hấu</a>
+                    
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="images/8.jpg" alt=""></div>
+                    <p><span>13000</span>đ&nbsp;/kg</p>
+                    <a href="#">Cà Chua</a>
+                   
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="images/9.jpg" alt=""></div>
+                    <p><span>120000</span>đ&nbsp;/hộp(0.5kg)</p>
+                    
+                    <a href="#">Dâu tây</a>
+                    
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/cart.js"></script>
+</body>
+
+</html>
